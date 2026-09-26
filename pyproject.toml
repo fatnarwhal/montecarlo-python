@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "montecarlo"
+version = "0.1.0"
+description = "Monte Carlo European option pricer — pick your own ticker/strike/date and run it"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+]
+
+[project.scripts]
+montecarlo = "montecarlo.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
